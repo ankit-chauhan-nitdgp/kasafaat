@@ -29,7 +29,7 @@ public class AuthController {
     @PostMapping("signup")
     public ResponseEntity<String> signup(){
 //        authService.signup(model);
-        return new ResponseEntity<>("success signup", HttpStatus.OK);
+        return new ResponseEntity<>("success signup changed", HttpStatus.OK);
     }
 
     @PostMapping("login")

@@ -38,4 +38,4 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            sudo systemctl restart kasafaat
+            sudo systemctl restart myapp
