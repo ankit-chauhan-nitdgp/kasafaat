@@ -83,6 +83,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>kasafaat_app</finalName>
 	</build>
 
 </project>
