@@ -26,12 +26,12 @@ public class AuthController {
     private UserService userService;
 
 
-//    @PostMapping("signup")
-//    public ResponseEntity<String> signup(@RequestBody SampleModel model){
+    @PostMapping("signup")
+    public ResponseEntity<String> signup(@RequestBody SampleModel model){
 //        authService.signup(model);
-//        return new ResponseEntity<>("success", HttpStatus.OK);
-//    }
-//
+        return new ResponseEntity<>("success signup", HttpStatus.OK);
+    }
+
     @PostMapping("login")
     public ResponseEntity<List<SampleModel>> login(){
         List<SampleModel> list = authService.login();
