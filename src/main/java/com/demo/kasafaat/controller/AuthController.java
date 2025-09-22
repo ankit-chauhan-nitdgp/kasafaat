@@ -27,7 +27,7 @@ public class AuthController {
 
 
     @PostMapping("signup")
-    public ResponseEntity<String> signup(@RequestBody SampleModel model){
+    public ResponseEntity<String> signup(){
 //        authService.signup(model);
         return new ResponseEntity<>("success signup", HttpStatus.OK);
     }
