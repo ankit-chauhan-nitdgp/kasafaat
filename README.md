@@ -31,13 +31,13 @@ Users schedule pickups, third-party couriers transport garbage bags to darkstore
 ## Modules
 The backend is divided into functional modules for separation of concerns:
 
-- [**User Module**](src/main/java/com/demo/kasafaat/userModule/userREADME.md) – Authentication (DLT OTP), JWT sessions, profile management
-- [**Address Module**](src/main/java/com/demo/kasafaat/addressModule/addressREADME.md) – Multiple addresses per user with geo-coordinates
-- [**Darkstore Module**](src/main/java/com/demo/kasafaat/darkstoreModule/darkstoreREADME.md) – Manage darkstores, capacity, and nearest-store assignment
-- [**Order Module**](src/main/java/com/demo/kasafaat/orderModule/orderREADME.md) – Core order lifecycle, linking users, addresses, and darkstores
-- [**Logistics Module**](src/main/java/com/demo/kasafaat/logisticsModule/logisticREADME.md) – Integration with third-party logistics providers (APIs, webhooks, polling)
-- [**Notification Module**](src/main/java/com/demo/kasafaat/notificationModule/notificationREADME.md) – Push/SMS/Email alerts for order status updates
-- [**Common Module**](src/main/java/com/demo/kasafaat/commonModule/commonREADME.md) – Shared code: JWT, error handling, configs
+- [**User Module**](src/main/java/com/demo/kasafaat/userModule/README.md) – Authentication (DLT OTP), JWT sessions, profile management
+- [**Address Module**](src/main/java/com/demo/kasafaat/addressModule/README.md) – Multiple addresses per user with geo-coordinates
+- [**Darkstore Module**](src/main/java/com/demo/kasafaat/darkstoreModule/README.md) – Manage darkstores, capacity, and nearest-store assignment
+- [**Order Module**](src/main/java/com/demo/kasafaat/orderModule/README.md) – Core order lifecycle, linking users, addresses, and darkstores
+- [**Logistics Module**](src/main/java/com/demo/kasafaat/logisticsModule/README.md) – Integration with third-party logistics providers (APIs, webhooks, polling)
+- [**Notification Module**](src/main/java/com/demo/kasafaat/notificationModule/README.md) – Push/SMS/Email alerts for order status updates
+- [**Common Module**](src/main/java/com/demo/kasafaat/commonModule/README.md) – Shared code: JWT, error handling, configs
 
 ---
 
