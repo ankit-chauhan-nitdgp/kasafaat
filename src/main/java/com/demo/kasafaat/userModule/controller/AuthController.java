@@ -1,10 +1,10 @@
-package com.demo.kasafaat.controller;
+package com.demo.kasafaat.userModule.controller;
 
-import com.demo.kasafaat.model.SampleModel;
-import com.demo.kasafaat.model.UserModel;
-import com.demo.kasafaat.services.AuthService;
-import com.demo.kasafaat.services.OTPService;
-import com.demo.kasafaat.services.UserService;
+import com.demo.kasafaat.userModule.model.SampleModel;
+import com.demo.kasafaat.userModule.model.UserModel;
+import com.demo.kasafaat.userModule.services.AuthService;
+import com.demo.kasafaat.userModule.services.OTPService;
+import com.demo.kasafaat.userModule.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

@@ -1,7 +1,7 @@
-package com.demo.kasafaat.services;
+package com.demo.kasafaat.userModule.services;
 
-import com.demo.kasafaat.dao.UserDao;
-import com.demo.kasafaat.model.UserModel;
+import com.demo.kasafaat.userModule.dao.UserDao;
+import com.demo.kasafaat.userModule.model.UserModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

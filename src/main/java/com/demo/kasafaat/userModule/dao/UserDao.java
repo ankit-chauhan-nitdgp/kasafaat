@@ -1,6 +1,6 @@
-package com.demo.kasafaat.dao;
+package com.demo.kasafaat.userModule.dao;
 
-import com.demo.kasafaat.model.UserModel;
+import com.demo.kasafaat.userModule.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserDao extends JpaRepository<UserModel, Integer> {

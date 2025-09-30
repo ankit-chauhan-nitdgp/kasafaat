@@ -1,6 +1,6 @@
-package com.demo.kasafaat.dao;
+package com.demo.kasafaat.userModule.dao;
 
-import com.demo.kasafaat.model.OTPModel;
+import com.demo.kasafaat.userModule.model.OTPModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface OTPDao  extends JpaRepository<OTPModel, Integer> {

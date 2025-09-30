@@ -1,4 +1,5 @@
-package com.demo.kasafaat.model;
+package com.demo.kasafaat.userModule.model;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,10 +9,12 @@ import lombok.Data;
 
 @Entity
 @Data
-public class LoginModel {
+public class RegisterModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String userName;
-    private String mobileNumber;
+    private String username;
+    private String email;
+    private String name;
+    private String password;
 }

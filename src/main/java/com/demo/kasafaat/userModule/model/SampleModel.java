@@ -1,4 +1,4 @@
-package com.demo.kasafaat.model;
+package com.demo.kasafaat.userModule.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

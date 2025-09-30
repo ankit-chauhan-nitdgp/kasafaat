@@ -1,10 +1,7 @@
-package com.demo.kasafaat.services;
+package com.demo.kasafaat.userModule.services;
 
-import com.demo.kasafaat.dao.OTPDao;
-import com.demo.kasafaat.model.OTPModel;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
+import com.demo.kasafaat.userModule.dao.OTPDao;
+import com.demo.kasafaat.userModule.model.OTPModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
