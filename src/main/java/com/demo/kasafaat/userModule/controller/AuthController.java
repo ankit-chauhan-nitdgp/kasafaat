@@ -63,9 +63,9 @@ public class AuthController {
 
     // Step 1: Request OTP
     @PostMapping("request_otp")
-    public ResponseEntity<ApiResponse<String>> requestOtp(@RequestParam String phoneNumber) {
+    public ApiResponse<String> requestOtp(@RequestParam String phoneNumber) {
         String otp = otpService.generateOtp(phoneNumber);
-        return  ResponseEntity.ok(new ApiResponse<>(true, "OTP sent successfully for testing", otp, null));
+        return  new ApiResponse<>(true, "OTP sent successfully for testing", otp, null);
     }
 
     // Step 2: Verify OTP & check user
