@@ -39,4 +39,15 @@ public class UserService {
         return userRepository.save(existingUser);
     }
 
+    public UserModel updateActiveAddress(String phoneNumber, Long activeAddressId){
+        UserModel existingUser = userRepository.findByPhoneNumber(phoneNumber);
+
+        if (existingUser == null ){
+            throw new UserNotFoundException(phoneNumber);
+        }
+
+        existingUser.setActiveAddressId(activeAddressId);
+        return userRepository.save(existingUser);
+    }
+
 }

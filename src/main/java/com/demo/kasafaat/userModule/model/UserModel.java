@@ -16,6 +16,6 @@ public class UserModel {
     @Column(unique = true, nullable = false)
     private String phoneNumber;
 
-    @Column()
     private Long defaultAddressId;
+    private Long activeAddressId;
 }

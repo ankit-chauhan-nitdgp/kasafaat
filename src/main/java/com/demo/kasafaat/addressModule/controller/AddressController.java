@@ -43,10 +43,10 @@ public class AddressController {
 
         address.setUserPhoneNumber(addressDTO.getUserPhoneNumber());
         address.setLabel(addressDTO.getLabel());
-        address.setAddressLine(address.getAddressLine());
-        address.setNearbyLandmark(address.getNearbyLandmark());
-        address.setLatitude(address.getLatitude());
-        address.setLongitude(address.getLongitude());
+        address.setAddressLine(addressDTO.getAddressLine());
+        address.setNearbyLandmark(addressDTO.getNearbyLandmark());
+        address.setLatitude(addressDTO.getLatitude());
+        address.setLongitude(addressDTO.getLongitude());
 
 
         AddressModel newAddress = addressService.addAddress(address);
@@ -63,9 +63,15 @@ public class AddressController {
         return new ApiResponse<>(true, "Address updated successfully", saved, null);
     }
 
-    @PutMapping("/markDefault")
+    @PostMapping("/markDefault")
     public ApiResponse<UserModel> markDefault(@RequestParam String phoneNumber, @RequestParam Long defaultAddressId) {
         UserModel user = userService.updateDefaultAddress(phoneNumber, defaultAddressId);
+        return new ApiResponse<>(true, "Default address changed successfully", user, null);
+    }
+
+    @PostMapping("/markActive")
+    public ApiResponse<UserModel> markActive(@RequestParam String phoneNumber, @RequestParam Long activeAddressId) {
+        UserModel user = userService.updateActiveAddress(phoneNumber, activeAddressId);
         return new ApiResponse<>(true, "Default address changed successfully", user, null);
     }
 
