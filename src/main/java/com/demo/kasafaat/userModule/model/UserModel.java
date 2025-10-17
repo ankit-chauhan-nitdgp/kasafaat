@@ -9,10 +9,13 @@ public class UserModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     private String name;
 
     @Column(unique = true, nullable = false)
     private String phoneNumber;
+
+    @Column()
+    private Long defaultAddressId;
 }

@@ -1,6 +1,7 @@
 package com.demo.kasafaat.addressModule.services;
 
 import com.demo.kasafaat.addressModule.exception.AddressNotFoundException;
+import com.demo.kasafaat.addressModule.model.AddressDTO;
 import com.demo.kasafaat.addressModule.model.AddressModel;
 import com.demo.kasafaat.addressModule.dao.AddressRepository;
 import org.springframework.stereotype.Service;
@@ -15,15 +16,15 @@ public class AddressService {
         this.addressRepository = addressRepository;
     }
 
-    public List<AddressModel> getAddressesByUserId(Long userId) {
-        return addressRepository.findByUserId(userId);
+    public List<AddressModel> getAddressesByUserId(String userPhoneNumber) {
+        return addressRepository.findByUserPhoneNumber(userPhoneNumber);
     }
 
     public AddressModel addAddress(AddressModel address) {
         return addressRepository.save(address);
     }
 
-    public AddressModel updateAddress(Long id, AddressModel updated) {
+    public AddressModel updateAddress(Long id, AddressDTO updated) {
         AddressModel existing = addressRepository.findById(id)
                 .orElseThrow(() -> new AddressNotFoundException(id));
 
@@ -32,7 +33,6 @@ public class AddressService {
         existing.setNearbyLandmark(updated.getNearbyLandmark());
         existing.setLatitude(updated.getLatitude());
         existing.setLongitude(updated.getLongitude());
-        existing.setIsDefault(updated.getIsDefault());
 
         return addressRepository.save(existing);
     }

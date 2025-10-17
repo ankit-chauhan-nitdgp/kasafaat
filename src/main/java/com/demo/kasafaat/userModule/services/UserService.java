@@ -1,7 +1,10 @@
 package com.demo.kasafaat.userModule.services;
 
+import com.demo.kasafaat.addressModule.exception.AddressNotFoundException;
 import com.demo.kasafaat.userModule.dao.UserDao;
+import com.demo.kasafaat.userModule.exception.UserNotFoundException;
 import com.demo.kasafaat.userModule.model.UserModel;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +26,17 @@ public class UserService {
 
     public List<UserModel> getAllUser(){
         return userRepository.findAll();
+    }
+
+    public UserModel updateDefaultAddress(String phoneNumber, Long defaultAddressId){
+        UserModel existingUser = userRepository.findByPhoneNumber(phoneNumber);
+
+        if (existingUser == null ){
+            throw new UserNotFoundException(phoneNumber);
+        }
+
+        existingUser.setDefaultAddressId(defaultAddressId);
+        return userRepository.save(existingUser);
     }
 
 }

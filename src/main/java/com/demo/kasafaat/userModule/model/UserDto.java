@@ -15,6 +15,4 @@ public class UserDto {
         this.phone = phone;
         this.email = email;
     }
-
-    // Getters and setters
 }

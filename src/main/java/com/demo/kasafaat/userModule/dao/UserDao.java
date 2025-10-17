@@ -3,7 +3,7 @@ package com.demo.kasafaat.userModule.dao;
 import com.demo.kasafaat.userModule.model.UserModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserDao extends JpaRepository<UserModel, Integer> {
+public interface UserDao extends JpaRepository<UserModel, Long> {
 
     // Find User by phone number
     UserModel findByPhoneNumber(String phoneNumber);

@@ -69,7 +69,7 @@ public class AuthController {
     }
 
     // Step 2: Verify OTP & check user
-    @PostMapping("/verify_otp")
+    @PostMapping("verify_otp")
     public ApiResponse<Object> verifyOtp(@RequestParam String phoneNumber, @RequestParam String otp) {
         boolean isValid = otpService.verifyOtp(phoneNumber, otp);
 
