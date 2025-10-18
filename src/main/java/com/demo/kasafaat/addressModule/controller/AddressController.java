@@ -69,12 +69,6 @@ public class AddressController {
         return new ApiResponse<>(true, "Default address changed successfully", user, null);
     }
 
-    @PostMapping("/markActive")
-    public ApiResponse<UserModel> markActive(@RequestParam String phoneNumber, @RequestParam Long activeAddressId) {
-        UserModel user = userService.updateActiveAddress(phoneNumber, activeAddressId);
-        return new ApiResponse<>(true, "Default address changed successfully", user, null);
-    }
-
     @DeleteMapping("/deleteAddress")
     public ApiResponse<String> deleteAddress(@RequestParam Long id) {
         addressService.deleteAddress(id);

@@ -7,6 +7,7 @@ import com.demo.kasafaat.orderModule.model.Order;
 import com.demo.kasafaat.orderModule.model.OrderItem;
 import com.demo.kasafaat.orderModule.model.OrderStatus;
 import com.demo.kasafaat.userModule.model.UserModel;
+import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,9 +32,38 @@ public class OrderLifecycleService {
         return repo.save(o);
     }
 
-    public Order updateStatus(Long id, OrderStatus newStatus) {
-        Order o = repo.findById(id).orElseThrow(() -> new RuntimeException("Order not found"));
-        o.setStatus(newStatus);
-        return repo.save(o);
+    @Transactional
+    public Order updateStatus(Long orderId, OrderStatus newStatus) {
+        Order order = repo.findById(orderId)
+                .orElseThrow(() -> new RuntimeException("Order not found"));
+
+        OrderStatus current = order.getStatus();
+
+        if (!isValidTransition(current, newStatus)) {
+            throw new IllegalStateException("Invalid status transition: " + current + " → " + newStatus);
+        }
+
+        order.setStatus(newStatus);
+        order.setUpdatedAt(LocalDateTime.now());
+
+        switch (newStatus) {
+            case ACCEPTED -> order.setAcceptedAt(LocalDateTime.now());
+            case PACKED -> order.setPackedAt(LocalDateTime.now());
+            case OUT_FOR_DELIVERY -> order.setOutForDeliveryAt(LocalDateTime.now());
+            case DELIVERED -> order.setDeliveredAt(LocalDateTime.now());
+            case CANCELLED -> order.setCancelledAt(LocalDateTime.now());
+        }
+
+        return repo.save(order);
+    }
+
+    private boolean isValidTransition(OrderStatus from, OrderStatus to) {
+        return switch (from) {
+            case CREATED -> to == OrderStatus.ACCEPTED || to == OrderStatus.CANCELLED;
+            case ACCEPTED -> to == OrderStatus.PACKED || to == OrderStatus.CANCELLED;
+            case PACKED -> to == OrderStatus.OUT_FOR_DELIVERY || to == OrderStatus.CANCELLED;
+            case OUT_FOR_DELIVERY -> to == OrderStatus.DELIVERED || to == OrderStatus.CANCELLED;
+            default -> false;
+        };
     }
 }

@@ -17,5 +17,4 @@ public class UserModel {
     private String phoneNumber;
 
     private Long defaultAddressId;
-    private Long activeAddressId;
 }

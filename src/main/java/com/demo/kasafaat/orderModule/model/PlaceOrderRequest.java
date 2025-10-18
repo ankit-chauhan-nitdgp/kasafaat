@@ -8,4 +8,5 @@ import java.util.List;
 public class PlaceOrderRequest {
     private String phoneNumber;
     private List<OrderItem> items;
+    private Long activeAddressId;
 }

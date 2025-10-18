@@ -12,6 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "orders")
 public class Order {
     @Id @GeneratedValue
     private Long id;
@@ -27,4 +28,13 @@ public class Order {
     private List<OrderItem> items;
 
     private LocalDateTime createdAt;
+
+    //status update
+    private LocalDateTime updatedAt;
+
+    private LocalDateTime acceptedAt;
+    private LocalDateTime packedAt;
+    private LocalDateTime outForDeliveryAt;
+    private LocalDateTime deliveredAt;
+    private LocalDateTime cancelledAt;
 }

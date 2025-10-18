@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Data
-@Table(schema = "darkstores")
+@Table(name = "darkstores")
 public class DarkStoreModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
