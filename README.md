@@ -1,4 +1,4 @@
-# Garbage Pickup System – Modular Monolith (Spring Boot)
+# Bulk Garbage Pickup System – Modular Monolith (Spring Boot)
 
 ## Table of Contents
 - [Overview](#overview)
