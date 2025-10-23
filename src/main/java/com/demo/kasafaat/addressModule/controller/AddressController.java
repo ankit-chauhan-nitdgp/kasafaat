@@ -27,7 +27,7 @@ public class AddressController {
 
     @GetMapping("/health_check")
     public ApiResponse<String> health_check(){
-        return new ApiResponse<>(true, "Health check", " address module : running ok", null);
+        return new ApiResponse<>(true, "Health check", " Address module : running ok", null);
     }
 
 
